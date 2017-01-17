@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Weather</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/weather-icons-master/css/weather-icons.css">
+</head>
+<body>
+<div class="container">
+    <div class="well text-center">
+        <h1>Weather</h1>
+        <div class="row">
+            <h1><i class="wi wi-owm-801" id="wi"></i></h1>
+            <h2 id="city"></h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Temperature</h3>
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                            <tr>
+                                <td>Temperature</td>
+                                <td id="temp"><i class="wi wi-celsius"></i></td>
+                            <tr>
+                                <td>Temperature Min</td>
+                                <td id="temp_min"><i class="wi wi-celsius"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Temperature Max</td>
+                                <td id="temp_max"><i class="wi wi-celsius"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                        <button class="btn btn-primary" id="toggle-units" data-toggle="imperial">Fahrenheit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>a</h3>
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <td>a</td>
+                                <td>b</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Ligth</h3>
+                        <p id="wind_speed"></p>
+                        <p id="wind_gust"></p>
+                        <p id="wind_deg"></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>Winds</h3>
+                        <p id="wind_speed"></p>
+                        <p id="wind_gust"></p>
+                        <p id="wind_deg"></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<button class="btn btn-primary" id="toggle-units" data-toggle="imperial">Fahrenheit</button>-->
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="application/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/script.js"></script>
+</html>
