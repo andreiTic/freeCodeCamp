@@ -34,6 +34,11 @@ $(document).ready(function () {
                 $('#temp').prepend(data.main.temp);
                 $('#temp_min').prepend(data.main.temp_min);
                 $('#temp_max').prepend(data.main.temp_max);
+                $('#cloudiness').append(data.clouds.all);
+                $('#wind_speed').append(data.wind.speed);
+                $('#wind_direction').prepend(data.wind.deg+'° ');
+                $('#wind_deg').addClass('towards-'+data.wind.deg+'-deg');
+
             })
         });
     } else {

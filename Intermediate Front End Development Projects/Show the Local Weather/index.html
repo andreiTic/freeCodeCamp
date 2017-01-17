@@ -5,6 +5,7 @@
     <title>Local Weather</title>
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/weather-icons-master/css/weather-icons.css">
+    <link rel="stylesheet" href="vendor/weather-icons-master/css/weather-icons-wind.min.css">
 </head>
 <body>
 <div class="container">
@@ -42,12 +43,20 @@
             <div class="col-sm-3">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>a</h3>
-                        <table class="table table-hover">
+                        <h3>Clouds</h3>
+                        <table class="table table-bordered table-hover">
                             <tbody>
                             <tr>
-                                <td>a</td>
-                                <td>b</td>
+                                <td>Cloudiness %</td>
+                                <td id="cloudiness"></td>
+                            </tr>
+                            <tr>
+                                <td>Wind Speed m/s</td>
+                                <td id="wind_speed"></td>
+                            </tr>
+                            <tr>
+                                <td>Wind Direction</td>
+                                <td id="wind_direction"><i class="wi wi-wind " id="wind_deg"></i></td>
                             </tr>
                             </tbody>
                         </table>
@@ -57,11 +66,19 @@
             <div class="col-sm-3">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>Ligth</h3>
-                        <p id="wind_speed"></p>
-                        <p id="wind_gust"></p>
-                        <p id="wind_deg"></p>
-                        <p></p>
+                        <h3>Precipitations</h3>
+                        <table class="table table-bordered table-hover">
+                            <tbody>
+                            <tr>
+                                <td>Rain last 3hrs</td>
+                                <td id="rain"></td>
+                            </tr>
+                            <tr>
+                                <td>Snow last 3hrs</td>
+                                <td id="snow"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -69,9 +86,7 @@
                 <div class="thumbnail">
                     <div class="caption">
                         <h3>Winds</h3>
-                        <p id="wind_speed"></p>
-                        <p id="wind_gust"></p>
-                        <p id="wind_deg"></p>
+
                         <p></p>
                     </div>
                 </div>
