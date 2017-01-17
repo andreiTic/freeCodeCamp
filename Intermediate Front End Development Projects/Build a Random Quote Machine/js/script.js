@@ -1,5 +1,5 @@
 /**
- * Created by andrei on 17/01/17.
+ * Created by AndreiTic on 17/01/17.
  */
 $(document).ready(function () {
     $('#quoteBtn').on('click', function () {
