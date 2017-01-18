@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikipedia Viewer</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    .search-bar .form-control{
+        border-right:0;
+        box-shadow:0 0 0;
+        border-color:#ccc;
+    }
+    .search-bar button{
+        border:0;
+        background:transparent;
+    }
+    .input-group-addon{
+        background: white;
+    }
+    .panel{
+        margin-top: 20px;
+    }
+
+    .row{
+        padding-top: 50px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+
+                <div class="input-group search-bar">
+                    <input type="text" class="form-control" placeholder="Search" id="search-input" >
+                    <span class="input-group-addon">
+                        <button type="submit" id="search-btn">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+
+            <div id="results">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-primary" href="https://en.wikipedia.org/wiki/Special:Random">Random</a>
+        </div>
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script type="application/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/script.js"></script>
+</html>
