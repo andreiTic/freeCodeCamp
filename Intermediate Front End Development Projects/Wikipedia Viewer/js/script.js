@@ -19,7 +19,7 @@ function searchWiki() {
     var keywords = $('#search-input').val();
 
     var url = 'https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=' +
-        keywords;
+        keywords+'&callback=?';
 
     $.getJSON(url, function (response) {
         var resultsList = response.query.search;
@@ -36,5 +36,5 @@ function searchWiki() {
                 '</div>' +
                 '</div>');
         }
-    });
+    },'jsonp');
 }
