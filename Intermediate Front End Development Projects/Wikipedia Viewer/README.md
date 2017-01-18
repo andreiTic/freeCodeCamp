@@ -12,5 +12,5 @@ Build a CodePen.io app that is functionally similar to this: https://codepen.io/
 3. Hint #3: Use this link to experiment with Wikipedia's API.
 
 ###CodePen:
-https://codepen.io/andreitic/pen/MJjmPg
+
 
