@@ -20,8 +20,7 @@ $(document).ready(function () {
 
 function getWeather(units) {
     console.log(units);
-    var longitude;
-    var latitude;
+    var longitude, latitude;
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -38,7 +37,6 @@ function getWeather(units) {
                 var unit;
 
                 (units == 'metric') ? unit = 'celsius' : unit = 'fahrenheit';
-
                 $('#wi').addClass('wi-owm-' + data.weather[0].id);
                 $('#city').html(data.name);
                 $('#temp').html(data.main.temp + '<i class="wi wi-' + unit + '">');
@@ -49,7 +47,6 @@ function getWeather(units) {
                 (units == 'metric') ? unit = 'm/s' : unit = 'mil/h';
                 $('#wind_speed').html(data.wind.speed+unit);
                 $('#wind_direction').html(data.wind.deg + '° ' + '<i class="wi wi-wind towards-' + data.wind.deg + '-deg">');
-
             })
         });
     } else {
