@@ -16,7 +16,7 @@
             <h2 id="city"></h2>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-4 col-sm-offset-2">
                 <div class="thumbnail">
                     <div class="caption">
                         <h3>Temperature</h3>
@@ -24,23 +24,22 @@
                             <tbody>
                             <tr>
                                 <td>Temperature</td>
-                                <td id="temp"><i class="wi wi-celsius"></i></td>
+                                <td id="temp"></td>
                             <tr>
                                 <td>Temperature Min</td>
-                                <td id="temp_min"><i class="wi wi-celsius"></i></td>
+                                <td id="temp_min"></td>
                             </tr>
                             <tr>
                                 <td>Temperature Max</td>
-                                <td id="temp_max"><i class="wi wi-celsius"></i></td>
+                                <td id="temp_max"></td>
                             </tr>
                             </tbody>
                         </table>
                         <p></p>
-                        <button class="btn btn-primary" id="toggle-units" data-toggle="imperial">Fahrenheit</button>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-4">
                 <div class="thumbnail">
                     <div class="caption">
                         <h3>Clouds</h3>
@@ -63,36 +62,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>Precipitations</h3>
-                        <table class="table table-bordered table-hover">
-                            <tbody>
-                            <tr>
-                                <td>Rain last 3hrs</td>
-                                <td id="rain"></td>
-                            </tr>
-                            <tr>
-                                <td>Snow last 3hrs</td>
-                                <td id="snow"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>Winds</h3>
-
-                        <p></p>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!--<button class="btn btn-primary" id="toggle-units" data-toggle="imperial">Fahrenheit</button>-->
+        <button class="btn btn-primary" id="toggle-units" data-toggle="imperial">Fahrenheit</button>
     </div>
 </div>
 </body>
