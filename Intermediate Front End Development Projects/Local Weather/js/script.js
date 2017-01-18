@@ -19,7 +19,6 @@ $(document).ready(function () {
 });
 
 function getWeather(units) {
-    console.log(units);
     var longitude, latitude;
 
     if (navigator.geolocation) {
