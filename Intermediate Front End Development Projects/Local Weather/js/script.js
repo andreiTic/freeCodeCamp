@@ -1,54 +1,68 @@
 /**
  * Created by AndreiTic on 17/01/17.
  */
+var weather;
 $(document).ready(function () {
-    var units = 'metric';
-    getWeather(units);
+    weather = new Weather();
+    weather.getWeather();
 
     $('#toggle-units').on('click', function () {
-            units = $(this).attr('data-toggle');
-            if (units === 'imperial') {
-                getWeather('metric');
-                $(this).attr('data-toggle', 'metric').html('Fahrenheit');
-            } else {
-                getWeather('imperial');
-                $(this).attr('data-toggle', 'imperial').html('Celsius');
-            }
+            weather.toggleUnits();
+            $(this).html(weather.getDegreeUnits());
+            weather.getWeather();
         }
     );
 });
 
-function getWeather(units) {
-    var longitude, latitude;
+var Weather = function (){
+  var units = 'metric';
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            longitude = position.coords.longitude;
-            latitude = position.coords.latitude;
 
-            var url = 'http://api.openweathermap.org/data/2.5/weather?' +
-                'lat=' + latitude +
-                '&lon=' + longitude +
-                '&units=' + units +
-                '&appid=5d8e878ce4229f91fb1d45d154cde7a2';
+  this.toggleUnits = function(){
+    units = (units === 'metric') ? 'imperial':'metric';
+  };
 
-            $.getJSON(url, function (data) {
-                var unit;
+  this.getDegreeUnits = function(){
+      return (units === 'metric') ? 'Fahrenheit':'Celsius';
+  };
 
-                (units == 'metric') ? unit = 'celsius' : unit = 'fahrenheit';
-                $('#wi').addClass('wi-owm-' + data.weather[0].id);
-                $('#city').html(data.name);
-                $('#temp').html(data.main.temp + '<i class="wi wi-' + unit + '">');
-                $('#temp_min').html(data.main.temp_min + '<i class="wi wi-' + unit + '">');
-                $('#temp_max').html(data.main.temp_max + '<i class="wi wi-' + unit + '">');
+  this.getWeather = function(){
+    getWeather(units);
+  };
 
-                $('#cloudiness').html(data.clouds.all);
-                (units == 'metric') ? unit = 'm/s' : unit = 'mil/h';
-                $('#wind_speed').html(data.wind.speed+unit);
-                $('#wind_direction').html(data.wind.deg + '° ' + '<i class="wi wi-wind towards-' + data.wind.deg + '-deg">');
-            })
-        });
-    } else {
-        alert("Geolocation is not supported by this browser.");
+    function getWeather(units) {
+        var longitude, latitude;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                longitude = position.coords.longitude;
+                latitude = position.coords.latitude;
+
+                var url = 'http://api.openweathermap.org/data/2.5/weather?' +
+                    'lat=' + latitude +
+                    '&lon=' + longitude +
+                    '&units=' + units +
+                    '&appid=5d8e878ce4229f91fb1d45d154cde7a2';
+
+                $.getJSON(url, function (data) {
+                    var unitDegree = (units == 'metric') ?  'celsius' : 'fahrenheit';
+                    var unitSpeed = (units == 'metric') ?  'm/s' : 'mil/h';
+
+                    $('#wi').addClass('wi-owm-' + data.weather[0].id);
+                    $('#city').html(data.name);
+                    $('#temp').html(data.main.temp + '<i class="wi wi-' + unitDegree + '">');
+                    $('#temp_min').html(data.main.temp_min + '<i class="wi wi-' + unitDegree + '">');
+                    $('#temp_max').html(data.main.temp_max + '<i class="wi wi-' + unitDegree + '">');
+
+                    $('#cloudiness').html(data.clouds.all);
+                    $('#wind_speed').html(data.wind.speed+unitSpeed);
+                    $('#wind_direction').html(data.wind.deg + '° ' + '<i class="wi wi-wind towards-' + data.wind.deg + '-deg">');
+                })
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
     }
-}
+
+
+};
