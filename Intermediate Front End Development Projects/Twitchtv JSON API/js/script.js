@@ -2,7 +2,17 @@ $(document).ready(function () {
     checkOnlineChannels();
 });
 
-var channels = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+var channels = [
+    "ESL_SC2",
+    "OgamingSC2",
+    "cretetion",
+    "freecodecamp",
+    "storbeck",
+    "habathcx",
+    "RobotCaleb",
+    "noobs2ninjas",
+    "comster404"
+];
 function checkOnlineChannels() {
 
     for (var i = 0; i < channels.length; i++) {
@@ -26,12 +36,19 @@ function offlineStraems(channel) {
     var url = 'https://wind-bow.gomix.me/twitch-api/channels/' + channel;
 
     $.getJSON(url, function (response) {
-        var channelName = response.display_name;
-        var logoURL = response.logo;
-        var channelURL = response.url;
+        if (Boolean(response.error)) {
+            channelName = response.message;
+            message = response.error;
 
-        addPanel('offline', channelName, logoURL, channelURL);
-        addPanel('all', channelName, logoURL, channelURL);
+            channelNotFound( channelName, message );
+        } else {
+            var channelName = response.display_name;
+            var logoURL = response.logo;
+            var channelURL = response.url;
+
+            addPanel('offline', channelName, logoURL, channelURL);
+            addPanel('all', channelName, logoURL, channelURL);
+        }
     });
 }
 
@@ -45,6 +62,20 @@ function onlineStream(stream) {
 
     addPanel('online', channelName, logoURL, channelURL, game, desc, viewers);
     addPanel('all', channelName, logoURL, channelURL, game, desc, viewers);
+}
+function channelNotFound(channelName, message) {
+
+    var panel = '<div class="panel panel-default">' +
+        '<div class="panel-heading">' +
+        '<h3 class="panel-title">' + channelName + '</h3>' +
+        '</div>' +
+        '<div class="panel-body">' +
+        '<div class="col-sm-12">' +
+        '<p>' + message + '</p>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    $('#all').append(panel);
 }
 
 function addPanel(tag, channelName, logoURL, channelURL, game, desc, viewers) {
@@ -66,7 +97,7 @@ function addPanel(tag, channelName, logoURL, channelURL, game, desc, viewers) {
             '<li class="list-group-item" id="desc"><strong>Description : </strong>' + desc + '</li>' +
             '<li class="list-group-item" id="viewers"><strong>Viewers : </strong>' + viewers + '</li>' +
             '</ul>'
-    }else{
+    } else {
         panel += '<p>Offline</p>';
     }
 
