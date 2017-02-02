@@ -9,57 +9,62 @@
 <div class="well col-sm-3 col-lg-offset-4">
     <div class="row well screen" style="background: #848372" id="screen">
         <div class="row screen-total">
-            <p>a</p>
+            <p>0</p>
         </div>
         <div class="row screen-calc">
-            <p>b</p>
+            <p></p>
         </div>
 
-<style>
-    .btn{
-        width: 80px;
-        margin-top: 5px;
-    }
-    .long-btn{
-        width: 164px;
-    }
-    .tall-btn{
-        position: absolute;
-        height: 97px;
-    }
-    .screen{
-        height: 100px;
-    }
-    .screen-total{
-        font-size: 30px;
-    }
-    .screen-calc{
-        color: #535353;
-    }
-</style>
+        <style>
+            .btn {
+                width: 80px;
+                margin-top: 5px;
+            }
+
+            .long-btn {
+                width: 164px;
+            }
+
+            .tall-btn {
+                position: absolute;
+                height: 97px;
+            }
+
+            .screen {
+                height: 100px;
+            }
+
+            .screen-total {
+                font-size: 30px;
+            }
+
+            .screen-calc {
+                color: #535353;
+            }
+        </style>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button">AC</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">CE</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">&divide</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">X</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="AC">AC</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="CE">CE</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="divide">&divide</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="mult">X</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button">7</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">8</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">9</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">-</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="7">7</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="8">8</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="9">9</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="minus">-</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button">6</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">5</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">4</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">+</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="4">4</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="5">5</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="6">6</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="+">+</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button">3</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">2</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">1</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="1">1</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="2">2</button>
+        <button class="btn btn-default btn-lg" href="#" role="button" value="3">3</button>
         <button class="btn btn-default btn-lg tall-btn" href="#" role="button">=</button>
         <button class="btn btn-default btn-lg long-btn" href="#" role="button">0</button>
         <button class="btn btn-default btn-lg" href="#" role="button">.</button>
@@ -68,4 +73,5 @@
 </body>
 <script type="application/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <script type="application/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="js/app.js"></script>
 </html>
