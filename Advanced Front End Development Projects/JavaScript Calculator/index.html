@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>JavaScript Calculator</title>
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div class="well col-sm-3 col-lg-offset-4">
@@ -14,60 +15,32 @@
         <div class="row screen-calc">
             <p></p>
         </div>
-
-        <style>
-            .btn {
-                width: 80px;
-                margin-top: 5px;
-            }
-
-            .long-btn {
-                width: 164px;
-            }
-
-            .tall-btn {
-                position: absolute;
-                height: 97px;
-            }
-
-            .screen {
-                height: 100px;
-            }
-
-            .screen-total {
-                font-size: 30px;
-            }
-
-            .screen-calc {
-                color: #535353;
-            }
-        </style>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button" value="AC">AC</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="CE">CE</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="divide">&divide</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="mult">X</button>
+        <button class="btn btn-default btn-lg" id="allClear" value="AC">AC</button>
+        <button class="btn btn-default btn-lg" id="cearEntry" value="CE">CE</button>
+        <button class="btn btn-default btn-lg operator" value="divide">&divide;</button>
+        <button class="btn btn-default btn-lg operator" value="times">&times;</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button" value="7">7</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="8">8</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="9">9</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="minus">-</button>
+        <button class="btn btn-default btn-lg number" value="7">7</button>
+        <button class="btn btn-default btn-lg number" value="8">8</button>
+        <button class="btn btn-default btn-lg number" value="9">9</button>
+        <button class="btn btn-default btn-lg number operator" value="minus">&minus;</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button" value="4">4</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="5">5</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="6">6</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="+">+</button>
+        <button class="btn btn-default btn-lg number" value="4">4</button>
+        <button class="btn btn-default btn-lg number" value="5">5</button>
+        <button class="btn btn-default btn-lg number" value="6">6</button>
+        <button class="btn btn-default btn-lg operator" value="plus">&plus;</button>
     </div>
     <div class="row">
-        <button class="btn btn-default btn-lg" href="#" role="button" value="1">1</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="2">2</button>
-        <button class="btn btn-default btn-lg" href="#" role="button" value="3">3</button>
-        <button class="btn btn-default btn-lg tall-btn" href="#" role="button">=</button>
-        <button class="btn btn-default btn-lg long-btn" href="#" role="button">0</button>
-        <button class="btn btn-default btn-lg" href="#" role="button">.</button>
+        <button class="btn btn-default btn-lg number" value="1">1</button>
+        <button class="btn btn-default btn-lg number" value="2">2</button>
+        <button class="btn btn-default btn-lg number" value="3">3</button>
+        <button class="btn btn-default btn-lg equals-btn operator" value="equal">&equals;</button>
+        <button class="btn btn-default btn-lg long-btn" role="button">0</button>
+        <button class="btn btn-default btn-lg" value="dot">.</button>
     </div>
 </div>
 </body>
