@@ -4,27 +4,34 @@
 $(document).ready(function () {
     var calc = [];
 
-    $('.number').on('click', function () {
-        $('.screen-calc p').append(this.value);
-        calc.push(this.value);
-        console.log(calc.toString());
+    $('.btn-default').on('click', function () {
+        $('#calc').append(this.innerHTML);
+        if (this != $('#equals'))
+            calc.push(this.innerHTML);
     });
 
-    $('.equals-btn').on('click', function () {
-        doMath();
-    });
-
-    $('#allClear').on('click', function () {
+    $('#clear-all').on('click', function () {
+        $('#calc').html('');
+        $('#response').html('');
         calc = [];
-        $('.screen-calc p').html('');
+    });
+    $('#clear-element').on('click',function () {
+        calc.pop();
+        $('#calc').html(calc.toString());
     });
 
-    $('.operator').on('click', function () {
-
+    $('#equals').on('click', function () {
+        calc.pop();
+        if (/\d/.test(calc[calc.length-1])) {
+            var a = calc.join('');
+            $('#response').html(eval(a));
+            calc = [];
+            $('#calc').html('');
+        } else {
+            $('#response').html('Error');
+            $('#calc').html('');
+            calc=[];
+        }
     });
 
 });
-
-function doMath() {
-    alert('a');
-}
