@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "weather-icons": "^2.0.10"
+    "weather-icons": "^2.0.10",
+    "jquery.countdown": "^2.2.0"
   }
 }
