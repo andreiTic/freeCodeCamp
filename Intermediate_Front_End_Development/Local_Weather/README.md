@@ -10,5 +10,4 @@ Build a CodePen.io app that is functionally similar to this: http://codepen.io/F
 - [x] User Story: I can push a button to toggle between Fahrenheit and Celsius.
 
 - [x] We recommend using the Open Weather API. This will require creating a free API key. Normally you want to avoid exposing API keys on CodePen, but we haven't been able to find a keyless API for weather.
-###CodePen:
 
