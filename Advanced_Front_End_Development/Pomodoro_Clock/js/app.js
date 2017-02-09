@@ -2,15 +2,20 @@
  * Created by andrei on 07/02/17.
  */
 $(document).ready(function () {
-    var clock = $('.clock').FlipClock("2000", {
+// Instantiate a counter
+    clock = new FlipClock($('.clock'), 1, {
+        clockFace: 'MinuteCounter',
         autoStart: false,
         countdown: true,
-        clockFace: 'MinuteCounter'
-    });
-    clock.stop().setFaceValue(100).start(function() {
-        setTimeout(function() {
-            clock.stop().reset().start();
-        }, 3000);
+        callbacks: {
+            interval: function() {
+                var time = this.factory.getTime().time;
+
+                if(time == 0) {
+
+                }
+            }
+        }
     });
 
     $('.btn-number').click(function (e) {
@@ -24,7 +29,6 @@ $(document).ready(function () {
 
                 if (currentVal > input.attr('min')) {
                     input.val(currentVal - 1).change();
-                    clock.setFaceValue("3000" - 1);
                 }
 
                 if (parseInt(input.val()) == input.attr('min')) {
@@ -58,6 +62,6 @@ $(document).ready(function () {
     });
 
     $("#reset").on('click', function () {
-        clock.reset();
+        clock.setTime(1500);
     });
 });
