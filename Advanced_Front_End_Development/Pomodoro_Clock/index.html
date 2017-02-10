@@ -11,41 +11,42 @@
 <body>
 <div class="container">
     <div class="well well-lg clearfix" style="margin-top: 20%">
+
         <div class="col-sm-6">
-            <h1 style="margin-left: 130px">Time</h1>
+            <h1 style="margin-left: 130px" id="status">Start</h1>
             <div class="flip-clock-wrapper">
                 <div class="clock col-sm-offset-2"></div>
             </div>
         </div>
         <div class="col-sm-2">
-            <p>Break Length</p>
+            <p>session Length</p>
             <div class="input-group text-center">
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[1]">
+                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="break">
                         <span>&minus;</span>
                     </button>
                 </div>
-                <input type="text" name="quant[1]" class="form-control input-number text-center" value="5" min="1"
+                <input type="text" name="break" class="form-control input-number text-center" value="5" min="1"
                        max="60">
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="break">
                         <span>&plus;</span>
                     </button>
                 </div>
             </div>
         </div>
         <div class="col-sm-2">
-            <p>Session Length</p>
+            <p>session Length</p>
             <div class="input-group text-center">
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="quant[2]">
+                    <button type="button" class="btn btn-default btn-number" data-type="minus" data-field="session">
                         <span>&minus;</span>
                     </button>
                 </div>
-                <input type="text" name="quant[2]" class="form-control input-number text-center" value="25" min="1"
+                <input type="text" name="session" class="form-control input-number text-center" value="25" min="1"
                        max="60">
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[2]">
+                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="session">
                         <span>&plus;</span>
                     </button>
                 </div>
@@ -63,6 +64,13 @@
             </div>
         </div>
 
+
+    </div>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            <span class="sr-only">70% Complete</span>
+        </div>
     </div>
 </div>
 
