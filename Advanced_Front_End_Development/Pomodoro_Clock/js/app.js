@@ -10,7 +10,7 @@ function newClock(time, autoStart, status) {
 
     var isAutoStart = autoStart || false;
     var mode = status || "session";
-    var timeInSec = time || Number($("input[name*='session']").val());
+    var timeInSec = time || Number($("input[name*='session']").val() * 60);
 
     currentStatus = mode;
 
@@ -30,8 +30,7 @@ function newClock(time, autoStart, status) {
                 var time = $("input[name*='" + mode + "']").val() * 60;
                 var currentTime = time - clock.getTime().time;
                 var percentage = (currentTime * 100) / time;
-
-                $(".progress-bar").width(percentage + '%').at;
+                $(".progress-bar").width(percentage + '%');
             }
         }
     })
@@ -79,7 +78,7 @@ $('.btn-number').click(function (e) {
 
             if (currentVal > input.attr('min')) {
                 input.val(currentVal - 1).change();
-                changeTime(currentVal);
+                changeTime(currentVal - 1);
             }
 
             if (parseInt(input.val()) == input.attr('min')) {
@@ -90,7 +89,7 @@ $('.btn-number').click(function (e) {
 
             if (currentVal < input.attr('max')) {
                 input.val(currentVal + 1).change();
-                changeTime(currentVal);
+                changeTime(currentVal + 1);
             }
             if (parseInt(input.val()) == input.attr('max')) {
                 $(this).attr('disabled', true);
@@ -107,18 +106,20 @@ $('.input-number').focusin(function () {
 });
 
 $("#start").on('click', function () {
-    $("input[name*='break']").attr('disabled', true);
-    $("input[name*='session']").val(25);
     clock.start();
+    $('#status').html('Session');
 });
 
 $("#stop").on('click', function () {
     clock.stop();
+    $('#status').html('Pause');
 });
 
 $("#reset").on('click', function () {
     $("input[name*='break']").val(5);
     $("input[name*='session']").val(25);
+    $(".progress-bar").width('100%');
+    $("#status").html('Start Session');
     newClock();
 });
 
